@@ -1,12 +1,11 @@
-var FishTable = ({fishes}) => (
+var FishTable = (props) => (
   <table>
     <tbody>
      
-     <FishTable/>.append(fishes.map({
-
-      <FishTableRow {fishes:fishes} />
-
-     })   ) 
+    {props.fishes.map((fish) =>
+      <FishTableRow fish={fish}
+      />
+    )}
     </tbody>
   </table>
 );

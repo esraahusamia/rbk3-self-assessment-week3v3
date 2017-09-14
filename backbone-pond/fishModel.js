@@ -10,19 +10,17 @@ var Fish = Backbone.Model.extend({
 	},
 
 
-	initialize: function() {
-    this.render();
-    this.model.on('toggle:description', this.render, this);
-  },
+	// initialize: function() {
+ //    this.render();
+ //    this.model.on('toggle:description', this.render, this);
+ //  },
 
-	// render:function(){
 
-	// }
 
 
 	toggleDescription:function (){
-
-		this.model.on("click", this.render,this)
+        this.set("displayInfo",!this.get("displayInfo"))
+		this.trigger('toggle:description', this.render,this)
 	}
 
 });
